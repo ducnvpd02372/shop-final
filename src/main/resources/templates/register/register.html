@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Shop Hoa</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Sublime project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/styles/bootstrap4/bootstrap.min.css}">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/plugins/OwlCarousel2-2.2.1/animate.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/styles/main_styles.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/styles/responsive.css}">
+<link rel="stylesheet"
+	th:href="@{/https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css}"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+</head>
+<body>
+	<div th:replace="fragments/header::header"></div>
+	<div class="home">
+	<div class="home_slider_container">
+
+
+		<div class="container col-8">
+			<h3 style="color: red; text-align: center;">Đăng Ký Người Dùng</h3>
+			<form th:action="@{/register}" th:object="${customer}" method="post">
+				<div class="row">
+					<div class="form-group col-6">
+						<label for="exampleInputEmail1">Tên</label> <input
+							th:field="*{name}" class="form-control"
+							placeholder="Nhập họ tên của bạn">
+					</div>
+					<div class="form-group col-6">
+						<label for="exampleInputPassword1">Ngày Sinh</label> <input
+							type="date" th:field="*{birthday}" class="form-control">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-6">
+						<label for="exampleInputEmail1">Mật khẩu</label> <input
+							type="password" th:field="*{pass}" class="form-control" placeholder="Nhập mật khẩu">
+					</div>
+					<div class="form-group col-6">
+						<label for="exampleInputPassword1">Nhập lại mật khẩu</label> <input
+							type="password"  class="form-control"
+							placeholder="Nhập lại mật khẩu">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-6">
+						<label for="exampleInputEmail1">Email</label> <input
+							th:field="*{email}" type="email" class="form-control"
+							placeholder="Nhập email">
+					</div>
+					<div class="form-group col-6">
+						<label for="exampleInputPassword1">Phone</label> <input
+							th:field="*{phone}" class="form-control"
+							placeholder="Nhập số điện thoại">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-6">
+						<label for="exampleInputEmail1">Địa chỉ</label> <input
+							th:field="*{address}" class="form-control"
+							placeholder="Nhập dịa chỉ (Số,Đường,Xã/Phường,Quận/Huyện)">
+					</div>
+					<div class="form-group col-6">
+						<label for="exampleInputPassword1">Tỉnh/Thành Phố</label> <input
+							th:field="*{province}" class="form-control">
+					</div>
+				</div>
+
+				<p th:text="${result}" class="error p-bottom-w3ls"></p>
+				<input type="submit" class="btn btn-primary" value="Đăng Ký" /> <a
+					style="color: blue;" th:href="@{/login}">Đã có tài khoản</a>
+			</form>
+
+		</div>
+	</div>
+
+
+	<div th:replace="fragments/footer::footer"></div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="styles/bootstrap4/popper.js"></script>
+	<script src="styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="plugins/greensock/TweenMax.min.js"></script>
+	<script src="plugins/greensock/TimelineMax.min.js"></script>
+	<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+	<script src="plugins/greensock/animation.gsap.min.js"></script>
+	<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+	<script src="plugins/easing/easing.js"></script>
+	<script src="plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>
